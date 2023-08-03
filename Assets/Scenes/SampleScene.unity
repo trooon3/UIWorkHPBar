@@ -590,6 +590,7 @@ GameObject:
   m_Component:
   - component: {fileID: 906409765}
   - component: {fileID: 906409766}
+  - component: {fileID: 906409767}
   m_Layer: 5
   m_Name: Slider HP
   m_TagString: Untagged
@@ -615,10 +616,10 @@ RectTransform:
   m_Father: {fileID: 578296509}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 245.64, y: -13.09}
-  m_SizeDelta: {x: 148.58, y: 1188.66}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 254, y: -0.000061035156}
+  m_SizeDelta: {x: -1770.16, y: -370.35}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &906409766
 MonoBehaviour:
@@ -671,6 +672,21 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &906409767
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 906409764}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19064a31c608c674482ea63358ddacd9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _player: {fileID: 1543688540}
+  _sliderHealPoints: {fileID: 906409766}
+  _healPointChangeSpeed: 10.85
 --- !u!1 &1543688539
 GameObject:
   m_ObjectHideFlags: 0
@@ -700,8 +716,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b98300f47f7d940af4e03594d7f68a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _currentHealPoints: 50
-  _sliderHealPoints: {fileID: 906409766}
 --- !u!4 &1543688541
 Transform:
   m_ObjectHideFlags: 0
@@ -710,7 +724,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1543688539}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.33, y: 4.64, z: 0.05714141}
+  m_LocalPosition: {x: -2.3, y: 4.6, z: 0.05}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -729,7 +743,6 @@ GameObject:
   - component: {fileID: 1799175979}
   - component: {fileID: 1799175978}
   - component: {fileID: 1799175977}
-  - component: {fileID: 1799175980}
   m_Layer: 5
   m_Name: Button Damage
   m_TagString: Untagged
@@ -802,9 +815,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1799175980}
-        m_TargetAssemblyTypeName: HPController, Assembly-CSharp
-        m_MethodName: GetDamage
+      - m_Target: {fileID: 1543688540}
+        m_TargetAssemblyTypeName: Player, Assembly-CSharp
+        m_MethodName: LowerHealPoints
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -852,19 +865,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1799175975}
   m_CullTransparentMesh: 1
---- !u!114 &1799175980
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1799175975}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0c9fad66628feaf45a8c7c04fd91e567, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _player: {fileID: 1543688540}
 --- !u!1 &1829085155
 GameObject:
   m_ObjectHideFlags: 0
@@ -899,8 +899,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: -20}
+  m_AnchoredPosition: {x: 1.2600098, y: -0.090026855}
+  m_SizeDelta: {x: 2.52, y: -0.17}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1950092371
 GameObject:
@@ -914,7 +914,6 @@ GameObject:
   - component: {fileID: 1950092375}
   - component: {fileID: 1950092374}
   - component: {fileID: 1950092373}
-  - component: {fileID: 1950092376}
   m_Layer: 5
   m_Name: Button Heal
   m_TagString: Untagged
@@ -987,9 +986,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1950092376}
-        m_TargetAssemblyTypeName: HPController, Assembly-CSharp
-        m_MethodName: GetHeal
+      - m_Target: {fileID: 1543688540}
+        m_TargetAssemblyTypeName: Player, Assembly-CSharp
+        m_MethodName: RaiseHealPoints
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1037,19 +1036,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1950092371}
   m_CullTransparentMesh: 1
---- !u!114 &1950092376
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1950092371}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0c9fad66628feaf45a8c7c04fd91e567, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _player: {fileID: 1543688540}
 --- !u!1 &1956767516
 GameObject:
   m_ObjectHideFlags: 0
@@ -1084,7 +1070,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.25, y: 0}
   m_AnchorMax: {x: 0.75, y: 1}
-  m_AnchoredPosition: {x: 0, y: -5}
+  m_AnchoredPosition: {x: 0, y: -5.0001526}
   m_SizeDelta: {x: 0, y: -20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1986476784
@@ -1342,7 +1328,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0.000015258789}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -43.59, y: 102.29}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2035239439
