@@ -15,7 +15,7 @@ public class Player : MonoBehaviour
     public void RaiseHealPoints()
     {
         CurrentHealPoints += 10;
-
+        
         if (CurrentHealPoints >= 100)
         {
             CurrentHealPoints = 100;
@@ -25,7 +25,7 @@ public class Player : MonoBehaviour
     public void LowerHealPoints()
     {
         CurrentHealPoints -= 10;
-
+       
         if (CurrentHealPoints <= 0)
         {
             CurrentHealPoints = 0;
