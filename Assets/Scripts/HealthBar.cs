@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class HealPointsIndicator : MonoBehaviour
+public class HealthBar : MonoBehaviour
 {
     [SerializeField] private Player _player;
     [SerializeField] private Slider _sliderHealPoints;
@@ -11,12 +11,20 @@ public class HealPointsIndicator : MonoBehaviour
 
     private Coroutine _coroutine;
 
-    public void StartControlHealPointIndicator()
+    private void Start()
     {
-        _coroutine = StartCoroutine(ControlHealPointIndicator());
+       if (_sliderHealPoints.value != _player.CurrentHealPoints)
+	   {
+            StartControlHealth();
+       }
     }
 
-    private IEnumerator ControlHealPointIndicator()
+    public void StartControlHealth()
+    {
+        _coroutine = StartCoroutine(ControlHealth());
+    }
+
+    private IEnumerator ControlHealth()
     {
         while (_sliderHealPoints.value != _player.CurrentHealPoints)
         {

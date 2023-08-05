@@ -817,7 +817,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1543688540}
         m_TargetAssemblyTypeName: Player, Assembly-CSharp
-        m_MethodName: LowerHealPoints
+        m_MethodName: Damage
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -828,8 +828,8 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 906409767}
-        m_TargetAssemblyTypeName: HealPointsIndicator, Assembly-CSharp
-        m_MethodName: StartControlHealPointIndicator
+        m_TargetAssemblyTypeName: HealthBar, Assembly-CSharp
+        m_MethodName: StartControlHealth
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1000,7 +1000,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1543688540}
         m_TargetAssemblyTypeName: Player, Assembly-CSharp
-        m_MethodName: RaiseHealPoints
+        m_MethodName: Heal
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1011,8 +1011,8 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 906409767}
-        m_TargetAssemblyTypeName: HealPointsIndicator, Assembly-CSharp
-        m_MethodName: StartControlHealPointIndicator
+        m_TargetAssemblyTypeName: HealthBar, Assembly-CSharp
+        m_MethodName: StartControlHealth
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

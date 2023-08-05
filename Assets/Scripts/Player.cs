@@ -9,26 +9,16 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
-        CurrentHealPoints = 50f;
+        CurrentHealPoints = Mathf.Clamp(50f, 0f, 100f);
     }
 
-    public void RaiseHealPoints()
+    public void Heal()
     {
         CurrentHealPoints += 10;
-        
-        if (CurrentHealPoints >= 100)
-        {
-            CurrentHealPoints = 100;
-        }
     }
     
-    public void LowerHealPoints()
+    public void Damage()
     {
         CurrentHealPoints -= 10;
-       
-        if (CurrentHealPoints <= 0)
-        {
-            CurrentHealPoints = 0;
-        }
     }
 }
