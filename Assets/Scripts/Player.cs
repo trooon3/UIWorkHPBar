@@ -5,20 +5,23 @@ using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
-    public float CurrentHealPoints { get; private set; }
+    private float _damagePoints = 10f;
+    private float _healPoints = 10f;
+
+    public float CurrentHealthPoints { get; private set; }
 
     private void Start()
     {
-        CurrentHealPoints = Mathf.Clamp(50f, 0f, 100f);
+        CurrentHealthPoints = Mathf.Clamp(50f, 0f, 100f);
     }
 
     public void Heal()
     {
-        CurrentHealPoints += 10;
+        CurrentHealthPoints = Mathf.Clamp(CurrentHealthPoints += _healPoints, 0f, 100f);
     }
     
     public void Damage()
     {
-        CurrentHealPoints -= 10;
+        CurrentHealthPoints = Mathf.Clamp(CurrentHealthPoints -= _damagePoints, 0f, 100f);
     }
 }

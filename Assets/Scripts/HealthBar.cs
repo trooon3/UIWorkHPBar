@@ -6,29 +6,29 @@ using UnityEngine.UI;
 public class HealthBar : MonoBehaviour
 {
     [SerializeField] private Player _player;
-    [SerializeField] private Slider _sliderHealPoints;
+    [SerializeField] private Slider _sliderHealthPoints;
     [SerializeField] private float _healPointChangeSpeed;
 
     private Coroutine _coroutine;
 
     private void Start()
     {
-       if (_sliderHealPoints.value != _player.CurrentHealPoints)
+       if (_sliderHealthPoints.value != _player.CurrentHealthPoints)
 	   {
-            StartControlHealth();
+            StartDisplayHealth();
        }
     }
 
-    public void StartControlHealth()
+    public void StartDisplayHealth()
     {
-        _coroutine = StartCoroutine(ControlHealth());
+        _coroutine = StartCoroutine(DisplayHealth());
     }
 
-    private IEnumerator ControlHealth()
+    private IEnumerator DisplayHealth()
     {
-        while (_sliderHealPoints.value != _player.CurrentHealPoints)
+        while (_sliderHealthPoints.value != _player.CurrentHealthPoints)
         {
-            _sliderHealPoints.value = Mathf.MoveTowards(_sliderHealPoints.value, _player.CurrentHealPoints, _healPointChangeSpeed * Time.deltaTime);
+            _sliderHealthPoints.value = Mathf.MoveTowards(_sliderHealthPoints.value, _player.CurrentHealthPoints, _healPointChangeSpeed * Time.deltaTime);
             
             yield return null;
         }

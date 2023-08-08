@@ -685,7 +685,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _player: {fileID: 1543688540}
-  _sliderHealPoints: {fileID: 906409766}
+  _sliderHealthPoints: {fileID: 906409766}
   _healPointChangeSpeed: 10.85
 --- !u!1 &1543688539
 GameObject:
@@ -829,7 +829,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 906409767}
         m_TargetAssemblyTypeName: HealthBar, Assembly-CSharp
-        m_MethodName: StartControlHealth
+        m_MethodName: StartDisplayHealth
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1012,7 +1012,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 906409767}
         m_TargetAssemblyTypeName: HealthBar, Assembly-CSharp
-        m_MethodName: StartControlHealth
+        m_MethodName: StartDisplayHealth
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
