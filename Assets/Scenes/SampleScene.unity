@@ -590,7 +590,7 @@ GameObject:
   m_Component:
   - component: {fileID: 906409765}
   - component: {fileID: 906409766}
-  - component: {fileID: 906409767}
+  - component: {fileID: 906409768}
   m_Layer: 5
   m_Name: Slider HP
   m_TagString: Untagged
@@ -672,7 +672,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &906409767
+--- !u!114 &906409768
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -681,12 +681,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 906409764}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 19064a31c608c674482ea63358ddacd9, type: 3}
+  m_Script: {fileID: 11500000, guid: 71fba0fa043bab34a9254c5a6b25b2dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _player: {fileID: 1543688540}
   _sliderHealthPoints: {fileID: 906409766}
-  _healPointChangeSpeed: 10.85
+  _healPointChangeSpeed: 10
 --- !u!1 &1543688539
 GameObject:
   m_ObjectHideFlags: 0
@@ -716,6 +716,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b98300f47f7d940af4e03594d7f68a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _damagePoints: 10
+  _healPoints: 10
 --- !u!4 &1543688541
 Transform:
   m_ObjectHideFlags: 0
@@ -818,18 +820,6 @@ MonoBehaviour:
       - m_Target: {fileID: 1543688540}
         m_TargetAssemblyTypeName: Player, Assembly-CSharp
         m_MethodName: Damage
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 906409767}
-        m_TargetAssemblyTypeName: HealthBar, Assembly-CSharp
-        m_MethodName: StartDisplayHealth
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1001,18 +991,6 @@ MonoBehaviour:
       - m_Target: {fileID: 1543688540}
         m_TargetAssemblyTypeName: Player, Assembly-CSharp
         m_MethodName: Heal
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 906409767}
-        m_TargetAssemblyTypeName: HealthBar, Assembly-CSharp
-        m_MethodName: StartDisplayHealth
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
